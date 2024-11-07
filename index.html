@@ -54,16 +54,18 @@
 					<section>
 						<h2>Follow us on ...</h2>
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">https://x.com/endangered_SOL</span></a></li>
-							<li><a href="#" class="icon brands fa-telegram"><span class="label">https://t.me/+v1oaW0SUHJIxZjY8</span></a></li>
-							<li><a href="#" class="icon">
-								<img src="images/tensor.jpg" alt="Tensor Icon" style="width: 24px; height: 24px;">
-								<span class="label">https://www.tensor.trade/trade/ugly_little_fooks</span>
-							  </a></li>
-							  <li><a href="#" class="icon">
-								<img src="images/me.png" alt="ME Icon" style="width: 24px; height: 24px;">
-								<span class="label">https://magiceden.io/marketplace/ugly_little_fooks</span>
-							  </a></li>
+							<li><a href="https://x.com/endangered_SOL" class="icon brands fa-twitter"><span
+										class="label">X</span></a></li>
+							<li><a href="https://t.me/+v1oaW0SUHJIxZjY8" class="icon brands fa-telegram"><span
+										class="label">Telegram</span></a></li>
+							<li><a href="https://www.tensor.trade/trade/ugly_little_fooks" class="icon">
+									<img src="images/tensor.jpg" alt="Tensor Icon" style="width: 24px; height: 24px;">
+									<span class="label">Tensor</span>
+								</a></li>
+							<li><a href="https://magiceden.io/marketplace/ugly_little_fooks" class="icon">
+									<img src="images/me.png" alt="ME Icon" style="width: 24px; height: 24px;">
+									<span class="label">ME</span>
+								</a></li>
 						</ul>
 					</section>
 					<p class="copyright">
@@ -72,24 +74,35 @@
 				</div>
 				<div>
 					<section>
-						<h2>Get in touch</h2>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half">
-									<input type="text" name="name" id="name" placeholder="Name" />
-								</div>
-								<div class="field half">
-									<input type="text" name="email" id="email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send" class="primary" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</form>
+						<h2>Follow us on ...</h2>
+						<ul class="icons">
+							<li>
+								<a href="https://x.com/endangered_SOL" class="icon brands fa-twitter"
+									onclick="openInNewTab('https://x.com/endangered_SOL')">
+									<span class="label">Twitter</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://t.me/+v1oaW0SUHJIxZjY8" class="icon brands fa-telegram"
+									onclick="openInNewTab('https://t.me/+v1oaW0SUHJIxZjY8')">
+									<span class="label">Telegram</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.tensor.trade/trade/ugly_little_fooks" class="icon"
+									onclick="openInNewTab('https://www.tensor.trade/trade/ugly_little_fooks')">
+									<img src="images/tensor.jpg" alt="Tensor Icon" style="width: 24px; height: 24px;">
+									<span class="label">Tensor</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://magiceden.io/marketplace/ugly_little_fooks" class="icon"
+									onclick="openInNewTab('https://magiceden.io/marketplace/ugly_little_fooks')">
+									<img src="images/me.png" alt="Magic Eden Icon" style="width: 24px; height: 24px;">
+									<span class="label">Magic Eden</span>
+								</a>
+							</li>
+						</ul>
 					</section>
 				</div>
 			</div>
@@ -164,4 +177,9 @@
 	});
 
 	generateRandomDivs();
+
+	function openInNewTab(url) {
+		window.open(url, '_blank').focus();
+		return false;
+	}
 </script>
