@@ -23,17 +23,24 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1><a href="index.html"><strong>Ugly Little Fooks</strong> by Paul Fudd</a></h1>
+			<h1>
+				<a href="index.html">
+					<img src="images/Title.png" alt="Ugly Little Fooks" style="height: auto; max-width: 100%;">
+					By Paul Fudd
+				</a>
+			</h1>
+
+
+			<!-- Conteneur pour le bouton centré -->
+			<div id="refresh-container">
+				<button id="refresh-btn">Those are too UGLY</button>
+			</div>
+
 			<nav>
 				<ul>
 					<li><a href="#footer" class="icon solid fa-info-circle">About Us</a></li>
 				</ul>
 			</nav>
-
-			<!-- Ajouter un bouton au centre -->
-			<div id="refresh-container">
-				<button id="refresh-btn">Those one are too UGLY</button>
-			</div>
 		</header>
 
 		<!-- Main -->
@@ -142,6 +149,7 @@
 			img.id = `img-${i + 1}`;
 			img.src = imageUrl;
 			img.alt = `#${randomNum}`;
+			img.classList.add("fade-in");
 			img.style.width = "100%";
 			img.style.height = "auto";
 
@@ -151,7 +159,7 @@
 			const buyButton = document.createElement("a");
 			buyButton.href = `https://magiceden.io/marketplace/ugly_little_fooks?search="${randomNum}"`;
 			buyButton.classList.add("buy-button");
-			buyButton.textContent = "Buy me on";
+			buyButton.textContent = "Search me on";
 			buyButton.target = "_blank";
 			buyButton.rel = "noopener noreferrer";
 
