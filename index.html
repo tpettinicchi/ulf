@@ -29,6 +29,11 @@
 					<li><a href="#footer" class="icon solid fa-info-circle">About Us</a></li>
 				</ul>
 			</nav>
+
+			<!-- Ajouter un bouton au centre -->
+			<div id="refresh-container">
+				<button id="refresh-btn">Those one are too UGLY</button>
+			</div>
 		</header>
 
 		<!-- Main -->
@@ -110,9 +115,12 @@
 </div>
 
 <script>
+	// Fonction pour générer les images aléatoires
 	function generateRandomDivs() {
 		const mainDiv = document.getElementById("main");
 		const baseUrl = "https://we-assets.pinit.io/2ToA3qZ4Hahv1EHpquLZ4kU7vypud6vUrA9RTLxyfRkN/73c2ca2e-c77d-44a3-bf63-99ce9b4c8fae/";
+
+		mainDiv.innerHTML = ''; // Effacer les anciennes images
 
 		for (let i = 0; i < 12; i++) {
 			const randomNum = Math.floor(Math.random() * 10000) + 1;
@@ -120,6 +128,7 @@
 
 			const article = document.createElement("article");
 			article.classList.add("thumb");
+			article.style.position = "relative";
 
 			const anchor = document.createElement("a");
 			anchor.href = "#";
@@ -133,18 +142,52 @@
 			img.id = `img-${i + 1}`;
 			img.src = imageUrl;
 			img.alt = `#${randomNum}`;
-			img.style.width = "100%"; // Adapter l'image pour ne pas être tronquée
+			img.style.width = "100%";
 			img.style.height = "auto";
 
 			const heading = document.createElement("h2");
 			heading.textContent = `#${randomNum}`;
 
+			const buyButton = document.createElement("a");
+			buyButton.href = `https://magiceden.io/marketplace/ugly_little_fooks?search="${randomNum}"`;
+			buyButton.classList.add("buy-button");
+			buyButton.textContent = "Buy me on";
+			buyButton.target = "_blank";
+			buyButton.rel = "noopener noreferrer";
+
+			const magicEdenIcon = document.createElement("img");
+			magicEdenIcon.src = "images/me.png";
+			magicEdenIcon.alt = "Magic Eden Icon";
+			magicEdenIcon.style.width = "24px";
+			magicEdenIcon.style.height = "24px";
+			magicEdenIcon.style.marginLeft = "10px";
+			buyButton.appendChild(magicEdenIcon);
+
+			buyButton.style.position = "absolute";
+			buyButton.style.bottom = "10px";
+			buyButton.style.right = "10px";
+			buyButton.style.backgroundColor = "black";
+			buyButton.style.color = "white";
+			buyButton.style.padding = "10px 20px";
+			buyButton.style.textDecoration = "none";
+			buyButton.style.borderRadius = "5px";
+			buyButton.style.fontSize = "14px";
+			buyButton.style.display = "flex";
+			buyButton.style.alignItems = "center";
+			buyButton.style.justifyContent = "center";
+
 			anchor.appendChild(img);
 			article.appendChild(anchor);
 			article.appendChild(heading);
+			article.appendChild(buyButton);
 			mainDiv.appendChild(article);
 		}
 	}
+
+	// Ajouter l'événement de rafraîchissement pour le bouton
+	document.getElementById("refresh-btn").addEventListener("click", function () {
+		generateRandomDivs(); // Appeler la fonction qui régénère les images
+	});
 
 	function openModal(imageUrl) {
 		const modal = document.getElementById("modal");
