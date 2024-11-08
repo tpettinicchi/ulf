@@ -6,6 +6,33 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+#bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(36, 38, 41);  /* Ou toute couleur que vous souhaitez */
+    padding: 10px 0;
+    z-index: 1000; /* S'assurer qu'il est au-dessus des autres éléments */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;  /* Placer About Us à droite */
+    align-items: center;
+}
+
+nav a {
+    padding-right: 20px;  /* Espacement à droite */
+    color: #ffffff;  /* Couleur du texte */
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffffff;  /* Couleur au survol */
+}
 
 #header {
 	display: flex;
@@ -14,7 +41,17 @@
 	align-items: center;
 	/* Alignement vertical */
 	position: relative;
+	-moz-transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	bottom: auto;
+	height: 4em;
+	padding: 0 1em;
+	top: 0;
 }
+
+
 
 #header h1 img {
 	max-height: 50px;
@@ -24,9 +61,10 @@
 }
 
 #refresh-container {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 #refresh-btn {
@@ -447,7 +485,7 @@ a {
 
 a:hover {
 	border-bottom-color: transparent;
-	color: #34a58e !important;
+	color: #ffffff !important;
 }
 
 strong,
