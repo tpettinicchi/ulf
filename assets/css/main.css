@@ -337,6 +337,7 @@ menu,
 nav,
 section {
 	display: block;
+	font-size: 90%;
 }
 
 body {
